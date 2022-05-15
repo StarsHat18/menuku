@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:menuku/models/recipe.dart';
+import 'package:menuku/models/search.dart';
 
-class RecipeApi {
+class SearchApi {
   BaseOptions options = BaseOptions(
     baseUrl: "https://tasty.p.rapidapi.com/",
     connectTimeout: 30 * 1000,
@@ -14,7 +15,7 @@ class RecipeApi {
     },
   );
 
-  Future<List<Recipe>> getRecipe() async {
+  Future<List<Search>> getRecipe() async {
     var result;
     final params = {"from": "0", "size": "20", "tags": "under_30_minutes"};
     try {
@@ -24,9 +25,9 @@ class RecipeApi {
     } on DioError catch (e) {
       print(e.toString());
     }
-    List<Recipe> _temp = [];
+    List<Search> _temp = [];
     if (result != null) {
-      return Recipe.recipesFromSnapshot(result.data['results']);
+      return Search.searchsFromSnapshot(result.data['results']);
     }
     return _temp;
   }

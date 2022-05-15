@@ -4,6 +4,7 @@ import 'package:menuku/models/recipe.dart';
 import 'package:menuku/views/detail/detail_recepi_screen.dart';
 import 'package:menuku/views/home/home_viewm.dart';
 import 'package:menuku/views/widgets/card_recepi.dart';
+import 'package:menuku/views/search/search.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,7 +24,7 @@ class _HomePageState extends State<HomePage> {
     WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
       Provider.of<HomeViewModel>(context, listen: false).getRecipes();
       setState(() {
-        _isLoading= false;
+        _isLoading = false;
       });
     });
   }
@@ -46,6 +47,14 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search,color: Colors.yellow),
+            onPressed: () {
+              showSearch(context: context, delegate: SearchRecepi());
+            },
+          )
+        ],
       ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
