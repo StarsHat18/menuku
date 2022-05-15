@@ -3,12 +3,12 @@ import 'package:menuku/models/api/recipe_api.dart';
 import 'package:menuku/models/recipe.dart';
 
 class HomeViewModel extends ChangeNotifier {
-  late List<Recipe> _temp;
-  List get recipelist => _temp;
+  List<Recipe> _recipes=[];
+  List get recipelist => _recipes;
 
   Future<void> getRecipes() async {
-    final _recipes = await RecipeApi().getRecipe();
-    _temp = _recipes;
+    final c = await RecipeApi().getRecipe();
+    _recipes = c;
     notifyListeners();
   }
 }
