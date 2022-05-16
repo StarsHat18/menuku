@@ -69,7 +69,7 @@ class Recipe {
       description: json['description'] != null ? json['description'] : "",
       videoUrl: json['original_video_url'] != null
           ? json['original_video_url']
-          : "No Video",
+          : "noVideo",
       instructions: json['instructions'] != null
           ? List<Instruction>.from(
               json["instructions"].map((x) => Instruction.fromJson(x)))

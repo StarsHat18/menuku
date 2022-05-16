@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:menuku/views/detail/detail_video.dart';
+import 'package:menuku/views/widgets/transitions.dart';
 
 class CardRecepi extends StatelessWidget {
   CardRecepi({
@@ -79,10 +80,10 @@ class CardRecepi extends StatelessWidget {
                       onTap: () => {
                         Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => DetailVideo(
-                                      videoUrl: videoUrl,
-                                    )))
+                            CustomPageRoute(
+                                widget: DetailVideo(
+                              videoUrl: videoUrl,
+                            )))
                       },
                       child: Row(
                         children: const [

@@ -5,6 +5,7 @@ import 'package:menuku/views/detail/detail_recepi_screen.dart';
 import 'package:menuku/views/home/home_viewm.dart';
 import 'package:menuku/views/widgets/card_recepi.dart';
 import 'package:menuku/views/search/search.dart';
+import 'package:menuku/views/widgets/transitions.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
@@ -49,7 +50,7 @@ class _HomePageState extends State<HomePage> {
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.search,color: Colors.yellow),
+            icon: const Icon(Icons.search, color: Colors.yellow),
             onPressed: () {
               showSearch(context: context, delegate: SearchRecepi());
             },
@@ -71,21 +72,16 @@ class _HomePageState extends State<HomePage> {
                   onTap: () => {
                     Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => DetailRecepiScreen(
-                                  name: modelView.recipelist[index].name,
-                                  totalTime:
-                                      modelView.recipelist[index].totalTime,
-                                  images: modelView.recipelist[index].images,
-                                  description:
-                                      modelView.recipelist[index].description,
-                                  videoUrl:
-                                      modelView.recipelist[index].videoUrl,
-                                  instruction:
-                                      modelView.recipelist[index].instructions,
-                                  sections:
-                                      modelView.recipelist[index].sections,
-                                )))
+                        CustomPageRoute(
+                            widget: DetailRecepiScreen(
+                          name: modelView.recipelist[index].name,
+                          totalTime: modelView.recipelist[index].totalTime,
+                          images: modelView.recipelist[index].images,
+                          description: modelView.recipelist[index].description,
+                          videoUrl: modelView.recipelist[index].videoUrl,
+                          instruction: modelView.recipelist[index].instructions,
+                          sections: modelView.recipelist[index].sections,
+                        ))),
                   },
                 );
               },

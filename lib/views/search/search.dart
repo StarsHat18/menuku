@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:menuku/views/detail/detail_recepi_screen.dart';
 import 'package:menuku/views/search/search_viewm.dart';
 import 'package:menuku/views/widgets/card_recepi.dart';
+import 'package:menuku/views/widgets/transitions.dart';
 import 'package:provider/provider.dart';
 
 class SearchRecepi extends SearchDelegate {
@@ -9,7 +10,7 @@ class SearchRecepi extends SearchDelegate {
   List<Widget>? buildActions(BuildContext context) {
     return [
       IconButton(
-        icon: Icon(Icons.close),
+        icon: const Icon(Icons.close),
         onPressed: () {
           query = "";
         },
@@ -20,7 +21,7 @@ class SearchRecepi extends SearchDelegate {
   @override
   Widget? buildLeading(BuildContext context) {
     return IconButton(
-      icon: Icon(Icons.arrow_back),
+      icon: const Icon(Icons.arrow_back),
       onPressed: () {
         Navigator.pop(context);
       },
@@ -58,8 +59,8 @@ class SearchRecepi extends SearchDelegate {
               onTap: () => {
                 Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => DetailRecepiScreen(
+                    CustomPageRoute(
+                        widget: DetailRecepiScreen(
                               name: modelView.recipelist[index].name,
                               totalTime: modelView.recipelist[index].totalTime,
                               images: modelView.recipelist[index].images,
@@ -80,7 +81,7 @@ class SearchRecepi extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text('Search Recepi'),
     );
   }
