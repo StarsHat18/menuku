@@ -13,13 +13,13 @@ class Report {
   factory Report.fromJson(Map<String, dynamic> json) => Report(
       name: json['user_name'],
       email: json['user_email'],
-      subject: json['user_seubject'],
-      massage: json['user_massage']);
+      subject: json['user_subject'],
+      massage: json['user_message']);
 
   Map<String, dynamic> toJson() => {
         "user_name": name,
         "user_email": email,
-        "user_seubject": subject,
-        "user_massage": massage,
+        "user_subject": subject,
+        "user_message": massage,
       };
 }
