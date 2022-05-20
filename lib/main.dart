@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:menuku/views/home/home_viewm.dart';
 import 'package:menuku/views/report/report_viewm.dart';
 import 'package:menuku/views/search/search_viewm.dart';
-import 'package:menuku/views/widgets/spalsh_screen.dart';
+import 'package:menuku/views/spalsh_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {

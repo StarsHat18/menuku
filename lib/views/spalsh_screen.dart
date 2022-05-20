@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:menuku/views/widgets/main_page.dart';
+import 'package:menuku/views/main_screen.dart';
 
 class RecepiSplashScreen extends StatelessWidget {
   const RecepiSplashScreen({Key? key}) : super(key: key);
@@ -21,7 +21,7 @@ class RecepiSplashScreen extends StatelessWidget {
           const Text('Ukunem', style:  TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: Colors.red),),
         ]),
         backgroundColor: Colors.purple.shade200,
-        nextScreen:MainPage(),
+        nextScreen:MainScreen(),
         splashIconSize: 250,
         duration: 4000,
         splashTransition: SplashTransition.slideTransition,

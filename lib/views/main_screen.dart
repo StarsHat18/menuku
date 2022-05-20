@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:menuku/views/home/home_screen.dart';
 import 'package:menuku/views/report/report_screen.dart';
 
-class MainPage extends StatefulWidget {
-  MainPage({Key? key}) : super(key: key);
+class MainScreen extends StatefulWidget {
+  MainScreen({Key? key}) : super(key: key);
 
   @override
-  State<MainPage> createState() => _MainPageState();
+  State<MainScreen> createState() => _MainScreenState();
 }
 
-class _MainPageState extends State<MainPage> {
+class _MainScreenState extends State<MainScreen> {
   List pages= [
     HomePage(),
     ReportScreen(),

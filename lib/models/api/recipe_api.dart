@@ -9,7 +9,7 @@ class RecipeApi {
     headers: {
       'Content-Type': 'application/json',
       'X-RapidAPI-Host': 'tasty.p.rapidapi.com',
-      'X-RapidAPI-Key': '9562451f98msh12131d2cca155d1p10aa71jsn34b519c759b4',
+      'X-RapidAPI-Key': '3a165140aamsh9b0a5d48498522fp10f97djsn0bce933b0b0e',
       'useQueryString': true
     },
   );
